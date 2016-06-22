@@ -1,0 +1,8 @@
+{% extends 'my_app/base.html' %}
+
+{% block content %}
+    <h1>Hello!</h1>
+    {% for i in tweet_ids %}
+        {{ i.tweet_id }}
+    {% endfor %}
+{% endblock %}
