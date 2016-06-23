@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
-from .views import index
+from .views import TweetListView
 
 urlpatterns = [
-    url(r'^$', index)
+    url(r'^$', TweetListView.as_view(), name='tweet-list')
 ]

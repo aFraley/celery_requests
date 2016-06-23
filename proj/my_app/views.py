@@ -1,7 +1,11 @@
-from django.shortcuts import render
+from django.views.generic.list import ListView
 from .models import Tweet
 
 
-def index(request):
-    tweet_ids = Tweet.objects.all()
-    return render(request, 'my_app/index.html', {'tweet_ids': tweet_ids})
+class TweetListView(ListView):
+    model = Tweet
+    template_name = 'my_app/tweet_list.html'
+
+    def get_queryset(self):
+        return Tweet.objects.all()
+
